@@ -106,7 +106,8 @@
                 </div>
                 <div class="col-lg-3 ol-md-6 col-12">
                     <div class="row">
-                        <button class="btn1">Registrate</button>
+                        <a href="{{ route('registro') }}" class="btn1">
+                            Registrate</a>
                     </div>
                 </div>
             </div>
@@ -131,7 +132,55 @@
 
             <div class="col-lg-3">
                 <div class="card">
-                    <img src="{{ asset('/img/ropa/mayas1.jpg') }}" class="img-fluid mb-3" alt="">
+                    <img src="{{ asset('/img/ropa/jogger.jpg') }}" class="img-fluid mb-3" alt="">
+                    <input type="button" value="Add to Card">
+                    <h5>Producto Name</h5>
+                    <p><small><del>$300</del><span>$250</span></small></p>
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card">
+                    <img src="{{ asset('/img/ropa/benzaa.jpg') }}" class="img-fluid mb-3" alt="">
+                    <input type="button" value="Add to Card">
+                    <h5>Producto Name</h5>
+                    <p><small><del>$300</del><span>$250</span></small></p>
+                </div>
+
+            </div>
+
+            
+            <div class="col-lg-3">
+                <div class="card">
+                    <img src="{{ asset('/img/ropa/pantalon-dickies-874-white-.jpg') }}" class="img-fluid mb-3" alt="">
+                    <input type="button" value="Add to Card">
+                    <h5>Producto Name</h5>
+                    <p><small><del>$300</del><span>$250</span></small></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<br><br>
+<section class="collection">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card">
+                    <img src="{{ asset('/img/ropa/pantalosdickies.jpg') }}" class="img-fluid mb-3" alt="">
+                    <input type="button" value="Add to Card">
+                    <h5>Producto Name</h5>
+                    <p><small><del>$300</del><span>$250</span></small></p>
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card">
+                    <img src="{{ asset('/img/ropa/sudaderathrasher.jpg') }}" class="img-fluid mb-3" alt="">
                     <input type="button" value="Add to Card">
                     <h5>Producto Name</h5>
                     <p><small><del>$300</del><span>$250</span></small></p>
@@ -152,7 +201,7 @@
             
             <div class="col-lg-3">
                 <div class="card">
-                    <img src="{{ asset('/img/ropa/mayas1.jpg') }}" class="img-fluid mb-3" alt="">
+                    <img src="{{ asset('/img/ropa/tenis-vans-old-skool-pro-red-white.jpg') }}" class="img-fluid mb-3" alt="">
                     <input type="button" value="Add to Card">
                     <h5>Producto Name</h5>
                     <p><small><del>$300</del><span>$250</span></small></p>
