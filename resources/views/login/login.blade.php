@@ -1,7 +1,6 @@
 @extends('layouts.login')
 
 @section('login')
-
 <nav class="navbar navbar-expand-lg bh-black">
   <div class="container-fluid">
     <img src="{{ asset('/img/logo.jpg') }} " height="100"><a class="navbar-brand" href="#">Patina La Vida</a>
@@ -17,16 +16,20 @@
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Articulos
           </a>
+          
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Ropa</a></li>
             <li><a class="dropdown-item" href="#">Accesorios</a></li>
-            
+
           </ul>
         </li>
+
+
         <li class="nav-item">
           <a class="nav-link active" href="#" >Blog</a>
         </li>
       </ul>
+
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
         <button class="btn btn-outline-success" type="submit">Buscar</button>
@@ -34,27 +37,64 @@
     </div>
   </div>
 </nav>
-<br>
 
-<div class="form">
-    <div class="title">Logueate</div>
-    <form action="{{ route('validar_login') }}" method="post">
-        <div class="user-details">
-            <div class="input-box">
-                <span class="details">Correo</span>
-                <input type="text" placeholder="asdsada@gmail.com" name="correo" required=""> 
-            </div>
-            <div class="input-box">
-                <span class="details">Contraseña</span>
-                <input type="password" placeholder="********" name="password" required=""> 
-            </div>
-            
-            <br>
-            <div class="row">
-                        <button class="btn1" type="Submit">Login</button>
-            </div>
-        </div>
-    </form>
-</div>
 
-@endsection
+<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" action="#" method="post">
+        {{ csrf_field() }}
+				
+					<span class="login100-form-title p-b-43">
+						Login para Continuar
+					</span>
+					
+					
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Email</span>
+					</div>
+					
+					
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="pass">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Password</span>
+					</div>
+
+				
+
+						
+			
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+					
+					<div class="text-center p-t-46 p-b-20">
+						<span class="txt2">
+							or sign up using
+						</span>
+					</div>
+
+					<div class="login100-form-social flex-c-m">
+						<a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
+							<i class="fa fa-facebook-f" aria-hidden="true"></i>
+						</a>
+
+						<a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
+
+				<div class="login100-more" style="background-image: url('images/bg-01.jpg');">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+  @endsection

@@ -34,39 +34,57 @@
     </div>
   </div>
 </nav>
-<br><br>
 
-<div class="form">
-    <div class="title">Registrate</div>
-    <form action="{{ route('guardarCliente') }}" method="post" enctype="multipart/form-data">
-    {{ csrf_field() }}
-        <div class="user-details">
-            <div class="input-box">
-                <span class="details">Nombre completo</span>
-                <input type="text" placeholder="Pedrito Lopez Diaz"  name ="nombre" required=""> 
-            </div>
-            <div class="input-box">
-                <span class="details">Usuario</span>
-                <input type="text" placeholder="Usuario123" name="usuario" required=""> 
-            </div>
-            <div class="input-box">
-                <span class="details">Email</span>
-                <input type="text" placeholder="ejemplo@gmail.com" name="correo" required=""> 
-            </div>
-            <div class="input-box">
-                <span class="details">Contraseña</span>
-                <input type="password" placeholder="*****" name="password" required=""> 
-            </div>
-            <div class="input-box">
-                <span class="details">Confir. Contraseña</span>
-                <input type="Password" placeholder="****" name="cpassword" require> 
-            </div>
-            <br>
-            <div class="row">
-                        <button class="btn1" type="Submit">Registro</button>
-            </div>
-        </div>
-    </form>
-</div>
+
+<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" action="{{ route('guardarCliente') }}" method="post">
+        {{ csrf_field() }}
+					<span class="login100-form-title p-b-43">
+						Registrate
+					</span>
+					
+					
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="nombre" placeholder="Nombre">
+					
+					</div>
+
+          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="usuario" placeholder="Usuario">
+						
+						
+					</div>
+
+          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+          <input class="input100" type="text" name="correo" placeholder="Email">
+  
+					</div>
+
+          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="password" name="password" placeholder="***********">
+						
+						
+					</div>
+
+					
+					
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="cpassword" placeholder="************">
+						
+						
+					</div>
+
+					
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+        </form>
+					
+					
 
 @endsection
