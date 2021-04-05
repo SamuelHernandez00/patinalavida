@@ -41,6 +41,7 @@
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" action="{{ route('guardarCliente') }}" method="post">
         {{ csrf_field() }}
+				
 					<span class="login100-form-title p-b-43">
 						Registrate
 					</span>
@@ -52,39 +53,57 @@
 					</div>
 
           <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="usuario" placeholder="Usuario">
-						
-						
+						<input class="input100" type="text" name="nickname" placeholder="Usuario">
+					
 					</div>
 
           <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-          <input class="input100" type="text" name="correo" placeholder="Email">
+						<input class="input100" type="text" name="apellido_p" placeholder="Apellido Paterno">
+					
+					</div>
+
+          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="apellido_m" placeholder="Apellido Materno">
+					
+					</div>
+					
+          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email" placeholder="email">
+					
+					</div>
+
+          <div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="pass" placeholder="**************">
+					</div>
+
+          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="telefono" placeholder="Telefono">
+					
+					</div>
+          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="file">
+					
+					</div>
   
-					</div>
-
-          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="password" name="password" placeholder="***********">
-						
-						
-					</div>
-
-					
-					
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="cpassword" placeholder="************">
-						
-						
-					</div>
-
-					
+		
+			
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Login
+							Registrate
 						</button>
 					</div>
-        </form>
 					
 					
+
+					
+				</form>
+
+				<div class="login100-more" style="background-image: url('images/bg-01.jpg');">
+				</div>
+			</div>
+		</div>
+	</div>
+				
 
 @endsection
