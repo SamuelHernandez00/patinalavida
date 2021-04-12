@@ -14,7 +14,7 @@
 
 
 //View
-Route::name('/')->get('/', function() { return view('content.index'); });
+Route::get('/', function() { return view('content.index'); });
 Route::name('registro')->get('registro/', function() { return view('content.registro'); });
 Route::name('login')->get('login/', function() { return view('login.login'); });
 //Registro Usuario/Cliente
