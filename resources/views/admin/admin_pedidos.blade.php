@@ -1,6 +1,6 @@
-@extends('layouts.admin')
+@extends('layouts.admin_pedidos')
 
-@section('admin')
+@section('admin_pedidos')
 
 <nav class="navbar navbar-expand-lg bh-black">
   <div class="container-fluid">
@@ -76,15 +76,15 @@
                           </thead>
                           
                           <tbody>
-                          @foreach($adm as $admi)
+                          @foreach($ped as $pedi)
                           <tr>
-                            <th scope="row">{{ $admi->id_usuario }}</th>
-                            <td>{{ $admi->nombre }}</td>
-                            <td>{{ $admi->apellido_p }} {{$admi->apellido_m }}</td>
-                            <td>{{ $admi->nickname }}</td>
-                            <td>{{ $admi->email }}</td>
-                            <td>{{ $admi->rank }}</td>
-                            <td>{{ $admi->activo }}</td>
+                            <th scope="row">{{ $pedi->id_usuario }}</th>
+                            <td>{{ $pedi->nombre }}</td>
+                            <td>{{ $pedi->apellido_p }} {{$pedi->apellido_m }}</td>
+                            <td>{{ $pedi->nickname }}</td>
+                            <td>{{ $pedi->email }}</td>
+                            <td>{{ $pedi->rank }}</td>
+                            <td>{{ $pedi->activo }}</td>
                             <td>
                               <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
                             </td>

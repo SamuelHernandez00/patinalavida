@@ -11,16 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 //View
-Route::name('index')->get('index/', function() { return view('content.index'); });
+Route::name('/')->get('/', function() { return view('content.index'); });
 Route::name('registro')->get('registro/', function() { return view('content.registro'); });
 Route::name('login')->get('login/', function() { return view('login.login'); });
 //Registro Usuario/Cliente
-Route::name('guardarCliente')->post('guardarCliente/','PatinaController@guardar_registro');
+Route::name('nuevo_usuario')->post('nuevo_usuario/','RegisterController@guardar_registro');
 
 //Login
 Route::name('validar_login')->post('validar_login/','LoginController@validar_login');
+
+//----------------ADMINISTRACION
+
+Route::name('admin')->get('admin/','AdminController@admin');
+Route::name('admin_usuarios')->get('admin_usuarios/','AdminController@admin_usuarios');
+Route::name('admin_productos')->get('admin_productos/','AdminController@admin_productos');
+Route::name('admin_pedidos')->get('admin_pedidos/','AdminController@admin_pedidos');

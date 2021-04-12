@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTbTransacciones extends Migration
+class CreateTbProductosHasPedidos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateTbTransacciones extends Migration
      */
     public function up()
     {
-        Schema::create('tb_transacciones', function (Blueprint $table) {
-            $table->bigIncrements('id_transaccion');
-            $table->string('no_factura');
-            $table->float('subtotal');
-            $table->float('total');
+        Schema::create('tb_productos_has_pedidos', function (Blueprint $table) {
+            $table->unsignedBiginteger('id_producto');
+            $table->unsignedBiginteger('id_pedido');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateTbTransacciones extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_transacciones');
+        Schema::dropIfExists('tb_productos_has_pedidos');
     }
 }

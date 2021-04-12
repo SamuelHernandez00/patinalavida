@@ -19,11 +19,11 @@ class CreateTbUsuarios extends Migration
             $table->string('nickname',30);
             $table->string('apellido_p',30);
             $table->string('apellido_m',30);
-            $table->string('email',30);
-            $table->string('telefono',20);
+            $table->string('email',30)->unique();
+            $table->string('telefono',20)->nullable();
             $table->string('password',20);
-            $table->string('img',45);
-            $table->integer('rank');
+            $table->string('img',45)->nullable();
+            $table->integer('rank')->nullable();
             $table->integer('activo');
             $table->timestamps();
         });

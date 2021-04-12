@@ -16,16 +16,16 @@ class CreateTbDirecciones extends Migration
         Schema::create('tb_direcciones', function (Blueprint $table) {
             $table->bigIncrements('id_direccion');
             $table->string('calle');
-            $table->integer('numero');
             $table->integer('numero_exterior');
+            $table->integer('numero_interior')->nullable();
             $table->string('colonia');
             $table->string('cp');
             $table->string('estado');
             $table->string('municipio');
-            $table->string('referencia');
-            $table->integer('activo');
-            $table->bigInteger('id_usuario');
-            $table->bigInteger('id_punto_venta');
+            $table->string('referencia')->nullable();
+            $table->integer('activo')->nullable();
+            $table->unsignedBigInteger('id_usuario');
+            $table->unsignedBigInteger('id_punto_venta');
             $table->timestamps();
         });
     }

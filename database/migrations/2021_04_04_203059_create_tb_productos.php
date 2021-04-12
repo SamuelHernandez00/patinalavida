@@ -15,12 +15,12 @@ class CreateTbProductos extends Migration
     {
         Schema::create('tb_productos', function (Blueprint $table) {
             $table->bigIncrements('id_producto');
-            $table->string('nombre',45);
+            $table->string('nombre',45)->unique();
             $table->string('descripcion',45);
             $table->float('precio');
-            $table->string('img');
-            $table->integer('activo');
-            $table->biginteger('id_categoria');
+            $table->string('img')->nullable();
+            $table->integer('activo')->nullable();
+            $table->unsignedBiginteger('id_categoria');
             $table->timestamps();
         });
     }

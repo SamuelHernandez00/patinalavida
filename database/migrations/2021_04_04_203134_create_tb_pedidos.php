@@ -15,9 +15,9 @@ class CreateTbPedidos extends Migration
     {
         Schema::create('tb_pedidos', function (Blueprint $table) {
             $table->bigIncrements('id_pedido');
-            $table->bigInteger('id_usuario');
-            $table->bigInteger('id_direccion');
-            $table->bigInteger('id_transaccion');
+            $table->unsignedBigInteger('id_usuario');
+            $table->unsignedBigInteger('id_direccion');
+            $table->unsignedBigInteger('id_transaccion');
             $table->date('fecha');
             $table->date('fecha_entrega');
             $table->integer('entregado');

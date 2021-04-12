@@ -39,7 +39,7 @@
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="{{ route('guardarCliente') }}" method="post">
+				<form class="login100-form validate-form" action="{{ route('nuevo_usuario') }}" method="post">
         {{ csrf_field() }}
 				
 					<span class="login100-form-title p-b-43">
@@ -73,17 +73,18 @@
 					</div>
 
           <div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" placeholder="**************">
+						<input class="input100" type="password" name="password" placeholder="**************">
 					</div>
 
           <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="telefono" placeholder="Telefono">
 					
 					</div>
-          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="file">
+
+          
+						<input  type="hidden" name="rank" value="usuario">
 					
-					</div>
+          
   
 		
 			
