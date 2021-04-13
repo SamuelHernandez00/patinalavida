@@ -7,6 +7,7 @@ use App\UsuariosModel;
 use App\ProductosModel;
 use App\CategoriasModel;
 
+
 class PatinaController extends Controller
 {
     //
