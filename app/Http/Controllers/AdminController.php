@@ -17,7 +17,7 @@ class AdminController extends Controller
     }
 
     public function admin_usuarios(){
-        $usu = \DB::select('SELECT * FROM tb_usuarios');
+        $usu = UsuariosModel::all();
     
         return view('admin.admin_usuarios')
             ->with(['usu' => $usu ]);
