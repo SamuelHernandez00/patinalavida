@@ -15,18 +15,9 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Articulos
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Ropa</a></li>
-            <li><a class="dropdown-item" href="#">Accesorios</a></li>
-            
-          </ul>
-        </li>
+        
         <li class="nav-item">
-          <a class="nav-link active" href="#" >Blog</a>
+          <a class="nav-link active" href="{{ route('productos') }}" >Productos</a>
         </li>
       </ul>
       <form class="d-flex">
@@ -119,99 +110,27 @@
 <section class="collection">
     <div class="container">
         <h1 class="text-center">Productos Nuevos </h1><br>
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="card">
-                    <img src="{{ asset('/img/ropa/mayas1.jpg') }}" class="img-fluid mb-3" alt="">
-                    <input type="button" value="Add to Card">
-                    <h5>Producto Name</h5>
-                    <p><small><del>$300</del><span>$250</span></small></p>
-                </div>
-
-            </div>
-
-            <div class="col-lg-3">
-                <div class="card">
-                    <img src="{{ asset('/img/ropa/jogger.jpg') }}" class="img-fluid mb-3" alt="">
-                    <input type="button" value="Add to Card">
-                    <h5>Producto Name</h5>
-                    <p><small><del>$300</del><span>$250</span></small></p>
-                </div>
-
-            </div>
-
-            <div class="col-lg-3">
-                <div class="card">
-                    <img src="{{ asset('/img/ropa/benzaa.jpg') }}" class="img-fluid mb-3" alt="">
-                    <input type="button" value="Add to Card">
-                    <h5>Producto Name</h5>
-                    <p><small><del>$300</del><span>$250</span></small></p>
-                </div>
-
-            </div>
-
-            
-            <div class="col-lg-3">
-                <div class="card">
-                    <img src="{{ asset('/img/ropa/pantalon-dickies-874-white-.jpg') }}" class="img-fluid mb-3" alt="">
-                    <input type="button" value="Add to Card">
-                    <h5>Producto Name</h5>
-                    <p><small><del>$300</del><span>$250</span></small></p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-<br><br>
-<section class="collection">
-    <div class="container">
         
         <div class="row">
+        @foreach($productos as $producto)
             <div class="col-lg-3">
                 <div class="card">
-                    <img src="{{ asset('/img/ropa/pantalosdickies.jpg') }}" class="img-fluid mb-3" alt="">
+                    <img src="{{ asset('img/ropa/'. $producto->img) }}" class="img-fluid mb-3" alt="{{ $producto->img}}">
                     <input type="button" value="Add to Card">
-                    <h5>Producto Name</h5>
-                    <p><small><del>$300</del><span>$250</span></small></p>
+                    <h5>{{ $producto->nombre }}</h5>
+                    <p> {{ $producto->descripcion }}</p>
+                    <p><small><span> $ {{ $producto->precio }} </span></small></p>
                 </div>
-
+                  <br>
             </div>
-
-            <div class="col-lg-3">
-                <div class="card">
-                    <img src="{{ asset('/img/ropa/sudaderathrasher.jpg') }}" class="img-fluid mb-3" alt="">
-                    <input type="button" value="Add to Card">
-                    <h5>Producto Name</h5>
-                    <p><small><del>$300</del><span>$250</span></small></p>
-                </div>
-
-            </div>
-
-            <div class="col-lg-3">
-                <div class="card">
-                    <img src="{{ asset('/img/ropa/mayas1.jpg') }}" class="img-fluid mb-3" alt="">
-                    <input type="button" value="Add to Card">
-                    <h5>Producto Name</h5>
-                    <p><small><del>$300</del><span>$250</span></small></p>
-                </div>
-
-            </div>
-
-            
-            <div class="col-lg-3">
-                <div class="card">
-                    <img src="{{ asset('/img/ropa/tenis-vans-old-skool-pro-red-white.jpg') }}" class="img-fluid mb-3" alt="">
-                    <input type="button" value="Add to Card">
-                    <h5>Producto Name</h5>
-                    <p><small><del>$300</del><span>$250</span></small></p>
-                </div>
-
-            </div>
+            @endforeach
+            <br>
         </div>
-    </div>
+       
 </section>
+
 <br><br>
+
 <!-- Login -->
 <section class="parallex">
     <div class="container py-5 text-white text-center">

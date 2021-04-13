@@ -14,9 +14,13 @@
 
 
 //View
-Route::get('/', function() { return view('content.index'); });
+Route::name('index')->get('/','PatinaController@index');//Index
 Route::name('registro')->get('registro/', function() { return view('content.registro'); });
 Route::name('login')->get('login/', function() { return view('login.login'); });
+
+//View Productos 
+Route::name('productos')->get('productos/','PatinaController@productos');//Index
+
 //Registro Usuario/Cliente
 Route::name('nuevo_usuario')->post('nuevo_usuario/','RegisterController@guardar_registro');
 
