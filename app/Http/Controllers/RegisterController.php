@@ -22,10 +22,10 @@ class RegisterController extends Controller
              'telefono' => $request->input('telefono'),
              'img' => $request->input('img'),
              'rank' => 0,
-             'activo' => 1,
+             
 
          ));
 
-         return redirect()->route('index');
+         return view('content.index');
     }
 }
