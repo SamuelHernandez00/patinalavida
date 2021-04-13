@@ -19,7 +19,7 @@ Route::name('registro')->get('registro/', function() { return view('content.regi
 Route::name('login')->get('login/', function() { return view('login.login'); });
 
 //View Productos 
-Route::name('productos')->get('productos/','PatinaController@productos');//Index
+Route::name('productos')->get('productos/','PatinaController@productos');
 
 //Registro Usuario/Cliente
 Route::name('nuevo_usuario')->post('nuevo_usuario/','RegisterController@guardar_registro');
