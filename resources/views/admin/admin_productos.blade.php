@@ -66,25 +66,25 @@
 		                      <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Apellidos</th>
-                            <th scope="col">Usuario</th>
-                            <th scope="col">E-mail</th>
-                            <th scope="col">Rank</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">img</th>
                             <th scope="col">Activo</th>
+                            <th scope="col">Categoria</th>
                             <th></th>
                           </tr>
                           </thead>
                           
                           <tbody>
-                          @foreach($pro as $prod)
+                          @foreach($productos as $pruducto)
                           <tr>
-                            <th scope="row">{{ $prod->id_usuario }}</th>
-                            <td>{{ $prod->nombre }}</td>
-                            <td>{{ $prod->apellido_p }} {{$prod->apellido_m }}</td>
-                            <td>{{ $prod->nickname }}</td>
-                            <td>{{ $prod->email }}</td>
-                            <td>{{ $prod->rank }}</td>
-                            <td>{{ $prod->activo }}</td>
+                            <th scope="row">{{ $pruducto->id_producto }}</th>
+                            <td>{{ $pruducto->nombre }}</td>
+                            <td>{{ $pruducto->descripcion }}</td>
+                            <td>{{ $pruducto->precio }}</td>
+                            <td>{{ $pruducto->img }}</td>
+                            <td>{{ $pruducto->activo }}</td>
+                            <td>{{ $pruducto->id_categoria }}</td>
                             <td>
                               <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
                             </td>

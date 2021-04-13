@@ -24,10 +24,10 @@ class AdminController extends Controller
         }
 
     public function admin_productos(){
-        $pro = \DB::select('SELECT * FROM tb_productos');
+        $productos = ProductosModel::all();
         
         return view('admin.admin_productos')
-            ->with(['pro' => $pro ]);
+            ->with(['productos' => $productos ]);
     }
 
     public function admin_pedidos(){
