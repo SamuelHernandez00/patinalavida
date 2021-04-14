@@ -26,6 +26,6 @@ class RegisterController extends Controller
 
          ));
 
-         return view('content.index');
+         return view('login.login');
     }
 }

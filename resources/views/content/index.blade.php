@@ -138,7 +138,9 @@
             <div class="col-lg9">
                 <h1>Las mejores Marcas en un solo lugar</h1>
                 <p class="py-3">Ingresa y conoce mucho más</p>
-            <button class="btn2 mr-1"> Iniciar Sesion</button>
+                <form action="{{ route('login') }}">
+                <button class="btn2 mr-1" > Iniciar Sesion</button>
+                </form>
             </div>
         </div>
     </div>
