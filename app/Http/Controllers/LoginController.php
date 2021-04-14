@@ -23,21 +23,7 @@ class LoginController extends Controller
                 ->where('password', '=', $pass)
                 ->get();
 
-                if(count($usu) == 1){
-                    $request->session()->put('session_id', $usu->id_usuario);
-                    $request->session()->put('session_name', $usu->nombre_usuario);
-                    $request->session()->put('session_tipo', 'usuario');
-
-                    $session_id = $request->session()->get('session_id');
-                    $session_name = $request->session()->get('session_name');
-                    $session_tipo = $request->session()->get('session_tipo');
-
-                    return redirect()->route('admin');
-                }else{
-                    if (count($usu) == 1){
-                        return redirect()->route('registro');
-                    }
-                }
+               return redirect()->route('index');
             
 
            
