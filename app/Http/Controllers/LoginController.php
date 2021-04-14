@@ -23,30 +23,27 @@ class LoginController extends Controller
                 ->where('password', '=', $pass)
                 ->get();
 
-        if(count($usu) == ''){
-            $request->session()->put('session_id', $usu->id_usuario);
-            $request->session()->put('session_name', '', $usu->nombre);
-            $request->session()->put('session_rank', $usu->rank);
-            $request->session()->put('session_img', $usu->img);
+                if(count($usu) == 1){
+                    $request->session()->put('session_id', $usu->id_usuario);
+                    $request->session()->put('session_name', $usu->nombre_usuario);
+                    $request->session()->put('session_tipo', 'usuario');
 
-            $session_id = $request->session()->get('session_id');
-            $session_name = $request->session()->get('session_name');
-            $session_rank = $request->session()->get('session_rank');
-            $session_img = $request->session()->get('session_img');
+                    $session_id = $request->session()->get('session_id');
+                    $session_name = $request->session()->get('session_name');
+                    $session_tipo = $request->session()->get('session_tipo');
 
-            if( $session_rank == 1 ){
-                return redirect()->route('admin');
-            }else{
-                if($session_rank == 0){
-                    return redirect()->route('index')
-                        ->with(['mensaje' => 'Favor de registrarse antes de Loguearte']);
-                    
+                    return redirect()->route('admin');
+                }else{
+                    if (count($usu) == 1){
+                        return redirect()->route('registro');
+                    }
                 }
-            }
+            
+
            
-        }
+       
+    }
                 
            
-    }
 
 }

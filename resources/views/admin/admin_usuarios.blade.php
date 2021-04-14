@@ -86,7 +86,7 @@
                             <td>{{ $usus->rank }}</td>
                             <td>{{ $usus->activo }}</td>
                             <td>
-                              <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
+                              <a href="{{ route('editar_usuario', ['id' => $usus->id_usuario]) }}"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
                             </td>
                           </tr>
                           @endforeach
@@ -109,45 +109,64 @@
 		          <h4>Form</h4>
 	          </div>
 	          <div class="card-body">
-            <form class="form" role="form" autocomplete="off">
+            <form class="form"  action="{{ route('salvar_usuario', ['id' => $usus->id_usuario]) }}" method="post" autocomplete="off">
             {{ csrf_field() }}
+            {{ method_field('PUT')}}
               <div class="form-group row">
-                <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                <label class="col-lg-3 col-form-label form-control-label">Nombre</label>
                 <div class="col-lg-9">
-                  <input class="form-control" type="text" >
+                  <input class="form-control" type="text" name="nombre" value="{{ $usus->nombre }}" >
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-lg-3 col-form-label form-control-label">Last
+                <label class="col-lg-3 col-form-label form-control-label">Apellido P
                   name</label>
                 <div class="col-lg-9">
-                  <input class="form-control" type="text" >
+                  <input class="form-control" type="text" name="apellido_p" value="{{ $usus->apellido_p }}">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-lg-3 col-form-label form-control-label">Apellido M</label>
+                <div class="col-lg-9">
+                  <input class="form-control" type="text" name="apellido_m" value="{{ $usus->apellido_m }}">
                 </div>
               </div>
               <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label">Email</label>
                 <div class="col-lg-9">
-                  <input class="form-control" type="email">
+                  <input class="form-control" type="email" name="email" value="{{ $usus->email }}">
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-lg-3 col-form-label form-control-label">Username</label>
+                <label class="col-lg-3 col-form-label form-control-label">Telefono</label>
                 <div class="col-lg-9">
-                  <input class="form-control" type="text">
+                  <input class="form-control" type="text" name="telefono" value="{{ $usus->telefono }}">
                 </div>
               </div>
+
               <div class="form-group row">
-                <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                <label class="col-lg-3 col-form-label form-control-label">Img</label>
                 <div class="col-lg-9">
-                  <input class="form-control" type="password">
+                  <input class="form-control" type="file" name="img" valu="{{ $usus->img }}">
                 </div>
               </div>
+
               <div class="form-group row">
-                <label class="col-lg-3 col-form-label form-control-label">Confirm</label>
+                <label class="col-lg-3 col-form-label form-control-label">Rank</label>
                 <div class="col-lg-9">
-                  <input class="form-control" type="password" >
+                  <input class="form-control" type="text" name="rank" value="{{ $usus->rank }}">
                 </div>
               </div>
+
+              <div class="form-group row">
+                <label class="col-lg-3 col-form-label form-control-label">Activo</label>
+                <div class="col-lg-9">
+                  <input class="form-control" type="text" name="activo" value="{{ $usus->activo }}">
+                </div>
+              </div>
+
+          
+              
               <div class="form-group row">
                 <div class="col-lg-12 text-center">
                   <input type="reset" class="btn btn-secondary" value="Cancel">

@@ -33,3 +33,6 @@ Route::name('admin')->get('admin/','AdminController@admin');
 Route::name('admin_usuarios')->get('admin_usuarios/','AdminController@admin_usuarios');
 Route::name('admin_productos')->get('admin_productos/','AdminController@admin_productos');
 Route::name('admin_pedidos')->get('admin_pedidos/','AdminController@admin_pedidos');
+//---------Edicionn
+Route::name('editar_usuario')->get('editar_usuario/{id}','AdminController@editar_usuario');
+Route::name('salvar_usuario')->put('salvar_usuario/{id}','AdminController@salvar_usuario');

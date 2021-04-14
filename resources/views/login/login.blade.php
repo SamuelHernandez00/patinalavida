@@ -42,7 +42,7 @@
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="{{ route('validar_login') }}" method="post">
+				<form class="login100-form validate-form" action="{{ route('validar_login') }}" method="post" autocomplete="off">
         {{ csrf_field() }}
 				
 					<span class="login100-form-title p-b-43">
