@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\UsuariosModel;
 use App\ProductosModel;
+use App\CategoriasModel;
 
 class AdminController extends Controller
 {
@@ -19,7 +20,7 @@ class AdminController extends Controller
     }
 
     public function admin_usuarios(){
-        $usu = UsuariosModel::all();
+        $usu = \DB::select('SELECT * FROM tb_usuarios');
     
         return view('admin.admin_usuarios')
             ->with(['usu' => $usu ]);
@@ -42,17 +43,29 @@ class AdminController extends Controller
 
         public function editar_usuario($id){
             
-            $usu = UsuariosModel::find($id);
-        
-            return view('admin.admin_usuarios')
-                ->with(['usu' => $usu ]);
+            
+            $user = UsuariosModel::find($id);
+            dd($id);
             }
 
-    public function salvar_usuario(UsuariosModel $id, Request $request){
+   
+    public function borrar_usuario($id)
+    {
+        $id = ProductosModel::find($id);
+        $id->delete();
+        return redirect()->route('content.administrar_usuario');
+    }
+
+    public function usuario(){
+
+        $usuarios = UsuariosModel::all();
+        $productos = ProductosModel::all();
+        $categorias = CategoriasModel::all();
 
 
-        $id->update($request->only('nombre','apellido_p','apellido_m','email','telefono','img','rank','activo'));
-
-        return redirect()->route('administrar_usuarios', ['id' => $id->id_usuario]);
+        return view('usuario.usuario')
+            ->with(['productos' => $productos])
+            ->with(['categorias' => $categorias])
+            ->with(['usuarios' => $usuarios]);
     }
 }

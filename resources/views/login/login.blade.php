@@ -42,7 +42,7 @@
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="{{ route('validar_login') }}" method="post" autocomplete="off">
+				<form class="login100-form validate-form" action="{{ route('validar_login')}}" method="post" autocomplete="off">
         {{ csrf_field() }}
 				
 					<span class="login100-form-title p-b-43">
@@ -50,13 +50,13 @@
 					</span>
 					
 					
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<div class="wrap-input100 validate-input" required>
 						<input class="input100" type="text" name="email" placeholder="Email">
 						
 					</div>
 					
 					
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
+					<div class="wrap-input100 validate-input"  required>
 						<input class="input100" type="password" name="pass" placeholder="********">
 						
 					</div>

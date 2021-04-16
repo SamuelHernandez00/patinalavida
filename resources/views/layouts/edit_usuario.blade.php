@@ -43,6 +43,6 @@
             </script>
 </head>
 <body>
-	 @yield('admin_usuarios')
+	 @yield('edit_usuarios')
 </body>
 </html>

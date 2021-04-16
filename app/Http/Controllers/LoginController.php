@@ -23,7 +23,7 @@ class LoginController extends Controller
                 ->where('password', '=', $pass)
                 ->get();
 
-               return redirect()->route('index');
+               return redirect()->route('usuario');
             
 
            

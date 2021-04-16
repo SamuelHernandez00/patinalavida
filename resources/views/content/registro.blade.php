@@ -47,40 +47,45 @@
 					</span>
 					
 					
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="nombre" placeholder="Nombre">
+					<div class="wrap-input100 validate-input" >
+						<input class="input100" type="text" name="nombre" placeholder="Nombre" required>
 					
 					</div>
 
-          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="nickname" placeholder="Usuario">
+          <div class="wrap-input100 validate-input" >
+						<input class="input100" type="text" name="nickname" placeholder="Usuario" required>
 					
 					</div>
 
-          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="apellido_p" placeholder="Apellido Paterno">
+          <div class="wrap-input100 validate-input" >
+						<input class="input100" type="text" name="apellido_p" placeholder="Apellido Paterno" required>
 					
 					</div>
 
-          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="apellido_m" placeholder="Apellido Materno">
+          <div class="wrap-input100 validate-input" >
+						<input class="input100" type="text" name="apellido_m" placeholder="Apellido Materno" required>
 					
 					</div>
 					
-          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="email">
+          <div class="wrap-input100 validate-input" >
+						<input class="input100" type="text" name="email" placeholder="email" required>
 					
 					</div>
 
-          <div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="password" placeholder="**************">
+          <div class="wrap-input100 validate-input" >
+						<input id="password" class="input100" type="password" name="password" placeholder="**************" onkeyup="evaluar(this);" required>
 					</div>
 
-          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+
+          <b id="nivel"></b><br>
+          <b id="error"></b><br>
+
+
+          <div class="wrap-input100 validate-input" >
 						<input class="input100" type="text" name="telefono" placeholder="Telefono">
 					
 					</div>
-
+          
           
 						<input  type="hidden" name="rank" value="usuario">
 					
@@ -90,7 +95,7 @@
 			
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" >
 							Registrate
 						</button>
 					</div>
@@ -105,6 +110,7 @@
 			</div>
 		</div>
 	</div>
-				
+
+  
 
 @endsection

@@ -36,3 +36,6 @@ Route::name('admin_pedidos')->get('admin_pedidos/','AdminController@admin_pedido
 //---------Edicionn
 Route::name('editar_usuario')->get('editar_usuario/{id}','AdminController@editar_usuario');
 Route::name('salvar_usuario')->put('salvar_usuario/{id}','AdminController@salvar_usuario');
+Route::name('borrar_usuario')->get('borrar_usario/{id}','AdminController@borrar_usuario');
+//Usuario
+Route::name('usuario')->get('usuario/','AdminController@usuario');
